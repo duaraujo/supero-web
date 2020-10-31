@@ -1,0 +1,36 @@
+
+table {
+    width: 100%;
+}
+
+.mat-form-field {
+    font-size: 14px;
+    width: 100%;
+}
+
+td,
+th {
+    width: 25%;
+}
+
+.table-container {
+    height: 360px;
+    overflow: auto;
+}
+
+.edit {
+    cursor: pointer;
+    color: #FF9400;
+    margin-right: 4%;
+}
+
+.delete {
+    cursor: pointer;
+    color: #E35E6B;
+}
+
+.mat-paginator-sticky {
+    bottom: 0px;
+    position: sticky;
+    z-index: 10;
+}

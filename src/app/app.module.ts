@@ -12,27 +12,42 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderComponent } from './view/header/header.component';
 import { FooterComponent } from './view/footer/footer.component';
-import { TaskComponent } from './view/task/task.component';
+import { MatTableModule } from '@angular/material/table';
+import { MatSortModule } from '@angular/material/sort';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 import { HomeComponent } from './view/home/home.component';
+import { TaskListComponent } from './view/task/task-list/task-list.component';
+import { TaskFormComponent } from './view/task/task-form/task-form.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    TaskComponent,
-    HomeComponent
+    HomeComponent,
+    TaskListComponent,
+    TaskFormComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    HttpClientModule,
 
     MatToolbarModule,
     MatIconModule,
     MatButtonModule,
     MatCardModule,
-    MatListModule
+    MatListModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule,
+    MatFormFieldModule,
+    MatInputModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]

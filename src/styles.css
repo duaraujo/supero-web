@@ -6,3 +6,15 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     padding: 2%;
     text-align: -webkit-center;
 }
+
+.icon {
+    vertical-align: middle;
+}
+
+.btn-access {
+    border: solid;
+    border-color: #f16550;
+    color: #f16550;
+    width: inherit;
+    border-radius: 40px;
+}

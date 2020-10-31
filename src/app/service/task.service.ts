@@ -18,4 +18,9 @@ export class TaskService {
     return this.http.get(this.BASE_URL + 'task');
   }
 
+  public delete(id: any): Observable<any> {
+    const url = this.BASE_URL + 'task/' + id;
+    return this.http.delete(url);
+  }
+
 }
