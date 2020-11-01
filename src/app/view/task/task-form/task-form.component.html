@@ -1,1 +1,55 @@
-<p>task-form works!</p>
+<mat-card>
+    <mat-card-title>Adicionar Atividade</mat-card-title>
+
+    <mat-card-content class="form">
+        <form [formGroup]="form">
+
+            <mat-form-field class="full-width" appearance="outline">
+                <mat-label>Título</mat-label>
+                <input matInput placeholder="Título da atividade" formControlName="title">
+
+                <mat-error *ngIf="title.invalid">
+                    <mat-error *ngIf="title.hasError('required')">
+                        Campo obrigatório
+                    </mat-error>
+                </mat-error>
+
+            </mat-form-field>
+
+            <mat-form-field class="full-width" appearance="outline">
+                <mat-label>Descrição</mat-label>
+                <textarea formControlName="description" matInput placeholder="Faça uma descrição dessa atividade ..."></textarea>
+                <mat-error *ngIf="description.invalid">
+                    <mat-error *ngIf="description.hasError('required')">
+                        Campo obrigatório
+                    </mat-error>
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field *ngIf="edit" class="full-width" appearance="outline">
+                <mat-label>Status da Atividade</mat-label>
+                <mat-select formControlName="statusEnum" name="statusEnum">
+                    <mat-option value="TODO">Atividade para fazer</mat-option>
+                    <mat-option value="DOING">Fazendo</mat-option>
+                    <mat-option value="DONE">Concluído</mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            
+
+        </form>
+    </mat-card-content>
+
+    <mat-card-actions class="align-end">
+        <button mat-raised-button (click)="back()" color="warn">
+            <mat-icon class="icon">undo</mat-icon>
+            Cancelar
+        </button>
+        <button mat-raised-button (click)="save()" color="primary" [disabled]="!form.valid"
+            title="{{form.valid ? 'Realizar cadastro' : 'Preencha os campos obrigatórios'}}">
+            <mat-icon class="icon">add</mat-icon>
+            Salvar
+        </button>
+    </mat-card-actions>
+
+</mat-card>

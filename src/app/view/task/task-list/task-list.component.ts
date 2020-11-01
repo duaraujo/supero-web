@@ -12,7 +12,7 @@ import { TaskService } from 'src/app/service/task.service';
 })
 export class TaskListComponent implements OnInit {
 
-  displayedColumns: string[] = ['id', 'title', 'description', 'action'];
+  displayedColumns: string[] = ['id', 'title', 'statusEnum', 'action'];
   dataSource = new MatTableDataSource([]);
   @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
   @ViewChild(MatSort, {static: true}) sort: MatSort;
@@ -55,6 +55,13 @@ export class TaskListComponent implements OnInit {
 
   edit(id): void {
     this.router.navigate(['task/form/' + id]);
+  }
+  translate(status): string {
+    switch (status){
+      case 'TODO': return 'Atividade para fazer';
+      case 'DOING': return 'Fazendo';
+      case 'DONE': return 'Concluído';
+    }
   }
 
 }
